@@ -18,7 +18,7 @@ install_epel() {
 install_fish_shell() {
     echo "---"
     echo "Installing Fish shell..."
-    sudo dnf install -y fish
+    sudo dnf install -y fish util-linux-user
     # set fish as default shell (reboot to activate)
     chsh -s /usr/bin/fish
     if [ $? -eq 0 ]; then
@@ -50,6 +50,7 @@ install_fish_extensions() {
 
     # Install Starship
     echo "Installing Starship..."
+    dnf install -y tar
     curl -sS https://starship.rs/install.sh | sh
     if [ $? -eq 0 ]; then
         echo "Done!"
@@ -151,7 +152,7 @@ EOF
 install_extra_tools() {
     echo "---"
     echo "Installing Extra tools (bat, mkisofs, ranger, tldr, tmux) ..."
-    sudo dnf install -y bat mkisofs ranger tldr tmux
+    sudo dnf install -y bat mkisofs ranger tldr tmux net-tools
     if [ $? -eq 0 ]; then
         echo "Done!"
     else
@@ -174,7 +175,7 @@ while true; do
     echo "7) Install Extra tools"
     echo "8) Exit"
     echo ""
-    read -p "Your choice (1-6): " choice
+    read -p "Your choice (1-8): " choice
 
     case $choice in
         1)
