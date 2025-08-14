@@ -12,8 +12,13 @@ if ! command -v 7z &> /dev/null; then
 echo "7z:command not found, will install 7z first."
 sudo dnf install -y epel-release
 sudo dnf install -y p7zip p7zip-plugins
+#try to init 7z before using this command directly
+#to prevent unknown error
+7z
 fi
 
 sleep 2
-echo ""
+7z t DNCA1220-ISO.7z.001 && clear
+7z t DNCA1220-ISO.7z.002 && clear
+grep "7z"
 7z x DNCA1220-ISO.7z.001
