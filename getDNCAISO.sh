@@ -17,8 +17,7 @@ sudo dnf install -y p7zip p7zip-plugins
 7z
 fi
 
-sleep 2
-7z t DNCA1220-ISO.7z.001 && clear
-7z t DNCA1220-ISO.7z.002 && clear
-grep "7z"
+sleep 2 && 7z t DNCA1220-ISO.7z.001 && clear
+sleep 1 && 7z t DNCA1220-ISO.7z.002 && clear
+sleep 1 && ls -l | grep "7z"
 7z x DNCA1220-ISO.7z.001
