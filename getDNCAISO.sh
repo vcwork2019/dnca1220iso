@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 #use 7-zip to split source files, keep each file under 25Mb.
 echo ""
-echo "merging DNCA1220-ISO.iso from 7-zip files..."
+echo "merging DNCA12113-ISO.iso from 7-zip files..."
 echo "destination folder: /root/tmp/"
 echo ""
 sudo mkdir /root/tmp && cd /root/tmp
@@ -17,7 +17,7 @@ sudo dnf install -y p7zip p7zip-plugins
 7z
 fi
 
-sleep 2 && 7z t DNCA1220-ISO.7z.001 && clear
-sleep 1 && 7z t DNCA1220-ISO.7z.002 && clear
+sleep 2 && 7z t DNCA12113-ISO.7z.001 && clear
+sleep 1 && 7z t DNCA12113-ISO.7z.002 && clear
 sleep 1 && ls -l | grep "7z"
-7z x DNCA1220-ISO.7z.001
+7z x DNCA12113-ISO.7z.001
